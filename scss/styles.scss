@@ -1,0 +1,741 @@
+*
+{
+    margin: 0;
+}
+
+
+@function particles($max) {
+    $val: 0px 0px $color-particle;
+    @for $i from 1 through $max {
+      $val: #{$val}, random($spacing)+px random($spacing)+px $color-particle;
+    }
+    @return $val;
+  }
+  
+  @mixin particles($max) {
+    box-shadow: particles($max);
+    border-radius: 50%;
+  }
+
+@import 'colors';
+
+@mixin sizes ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+$spacing: 2560px;
+$time-1: 60s;
+$time-2: 120s;
+$time-3: 180s;
+$time-4: 200s;
+
+html 
+{
+    height: 100%;
+}
+
+
+@media screen and (min-width: 501px) {
+    .main {
+        h3 {
+        font-size: 40px;
+        }
+    }
+  }
+  
+@media screen and (max-width: 500px) {
+    .main{
+        h3{
+            font-size: 30px;
+        }
+    }
+}
+
+@keyframes aparecer
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    } 
+}
+
+
+.titulo-historia {
+    position: relative;
+    transform: translate(-20%);
+    left: 50%;
+}
+
+.glitch {
+    color: $rosado;
+    position: relative;
+    font-size: 9vw;
+    // margin: 70px 200px;
+    animation: glitch 5s 5s infinite;
+  }
+  
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -5px 0 $violeta;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  }
+  
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -5px 0;
+    background: transparent;
+    overflow: hidden;
+    top: 0;
+    animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  }
+  
+  @keyframes glitch {
+    1%{
+      transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+  
+  @keyframes noise-1 {
+    $steps: 30;
+    @for $i from 1 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  @keyframes noise-2 {
+    $steps: 30;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  @keyframes fudge {
+    from {
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(0px, 2%);
+    }
+  }
+
+  seccion-historia
+  {
+      padding-top: 0%;
+  }
+  
+  .glow {
+    @extend .glitch;
+    text-shadow: 0 0 1000px $rosado;
+    color: transparent;
+    position: absolute;
+    top: 0;
+  }
+  
+  @keyframes glitch-2 {
+    1%{
+      transform: rotateX(10deg) skewX(70deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+.main-historia
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    overflow: hidden;
+    background: $color-bg;
+    background-blend-mode: screen;
+    background-size: cover;
+    filter: grayscale(100%);
+    z-index: -1;
+}
+
+.page-bg, .animation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+.page-wrapper {
+    color:$blanco;
+    z-index: 2;
+}
+
+@keyframes animParticle {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY($spacing * -1);
+    }
+  }
+
+  .particle, .particle:after {
+    background: transparent;
+  }
+  
+  .particle:after {
+    position: absolute;
+    content: "";
+    top: $spacing;
+  }
+  
+  .particle-1 {
+    animation: animParticle $time-1 linear infinite;
+    @include particles(1000);
+    height: 2px;
+    width: 2px;
+  }
+  
+  .particle-1:after {
+    @include particles(900);
+    height: 2px;
+    width: 2px;
+  }
+  
+  .particle-2 {
+    animation: animParticle $time-2 linear infinite;
+    @include particles(800);
+    height: 2px;
+    width: 2px;
+  }
+  
+  .particle-2:after {
+    @include particles(500);
+    height: 3px;
+    width: 3px;
+  }
+  
+  .particle-3:after {
+    @include particles(1100);
+    height: 3px;
+    width: 3px;
+    border-radius: 50%;
+  }
+  
+  .particle-4 {
+    animation: animParticle $time-4 linear infinite;
+    @include particles(1200);
+    height: 1px;
+    width: 1px;
+  }
+  
+  .particle-4:after {
+    @include particles(700);
+    height: 1px;
+    width: 1px;
+  }
+
+.segmentos-inicio
+{
+    width: 100px;
+}
+
+.bienvenida
+{
+    h1
+    {
+        position: absolute;
+        color: transparent;
+        z-index: -10000;
+    }
+    padding-top: 20px;
+    margin: 0%;
+    width: 100%;
+    background-image: url("../imagenes/background.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.descarga
+{
+    background: $background-descarga;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+body
+{ 
+    position: relative;
+    margin: 0;
+    padding-bottom: 40px;
+    min-height: 100%;
+}
+
+.navbar
+{
+    background: $navbar-color;
+}
+
+.nav-link{
+    color: $azul;
+}
+
+
+.logo-historia
+{
+    display: block;
+    top: 0;
+    position: relative;
+    right: 0;
+    img{
+        height: 60px;
+        width: auto;
+    }
+}
+
+.columna-historia
+{
+    padding: 2%;
+}
+
+.main
+{
+    padding-top: 70px;
+    animation-duration: 1s; ;
+    animation-name: aparecer;
+    margin-bottom: 0%;
+    margin-right: 0;
+    margin-left: 0;
+    height: 100%;
+    h2
+    {
+        text-align: center;
+        padding: 0%;
+        color: negro;
+        font-family: 'Work Sans', cursive;
+        font-size: 300%;
+    }
+    h3
+    {
+        
+        text-align: ce;
+        padding: 0%;
+        color:$rosado;
+        font-family: 'Work Sans', cursive;
+
+    }
+}
+
+.imagendescarga
+{
+    float: right;
+}
+
+.botoninicio
+{
+    width: 140px; 
+}
+
+.textoanimado
+{
+    text-align: center;
+    @include sizes(100%,100%);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.logo2
+{
+    position: absolute;
+    z-index: 1;
+}
+
+.llama
+{
+    bottom: 0;
+    width: 50%;
+    float: right;
+    min-width: 300px;
+    position: absolute;
+    z-index: 0;
+}
+
+.logo2
+{
+    max-width: 200px;
+    max-height: 200px;
+    width: 50%;
+    height: auto;
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+}
+
+.textoanimado__h3
+{
+    text-align: center;
+    color: $azulclaro;
+    div {
+        overflow: hidden;
+        position: relative;
+        float: right;
+        height: 65px;
+        padding-top: 10px;
+        margin-top: -10px;
+    }
+    ul{
+        padding: 0%;
+    }  
+    li {
+        text-align: left;
+        color: $azulclaro;
+        font-weight: 700;
+        padding: 0 10px;
+        height: 45px;
+        margin-bottom: 45.3px;
+        display: block;
+    }
+}
+
+.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+    0% { margin-top: -180px; }
+    5% { margin-top: -90px;  }
+    50% { margin-top: -90px; }
+    55% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+@keyframes flip3 {
+    0% { margin-top: -270px; }
+    5% { margin-top: -180px; }
+    33% { margin-top: -180px; }
+    38% { margin-top: -90px; }
+    66% { margin-top: -90px; }
+    71% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+@keyframes flip4 {
+    0% { margin-top: -360px; }
+    5% { margin-top: -270px; }
+    25% { margin-top: -270px; }
+    30% { margin-top: -180px; }
+    50% { margin-top: -180px; }
+    55% { margin-top: -90px; }
+    75% { margin-top: -90px; }
+    80% { margin-top: 0px; }
+    99.99% { margin-top: 0px; }
+    100% { margin-top: -270px; }
+}
+
+.divisor-linea
+{
+    float: inline-end;
+    height: 2px;
+    background-color: $violeta;
+}
+
+.boton-descarga 
+{
+    a
+    {
+        text-decoration: none;
+    }
+}
+
+h4
+{
+    text-align: left;
+    padding: 0%;
+    color: $azul;
+    font-family: 'Work Sans', cursive;
+    font-size: 35px;
+}
+
+h5
+{
+    text-align: center;
+    padding: 0%;
+    color: $azulado;
+    font-family: 'Work Sans', cursive;
+    font-size: 20px;
+}
+
+.logo__img
+{
+    width: 70%;
+    max-width: 500px;
+}
+
+.logo
+{
+    text-align: center;
+    margin-bottom: 0%;
+    width: auto;
+}
+
+.articulo
+{
+    padding-top: 2%;
+    color: $gris;
+    text-align: center;
+    img
+    {
+        margin-right: 2%;
+    }
+}
+
+.textovid1
+{
+    position: relative;
+}
+
+.conclusion strong
+{
+    font-size: 40px;
+    text-align: ce;
+    padding: 0%;
+    font-family: 'Work Sans', cursive;
+    color:$negro;
+}
+
+.seccion--visualizaciones
+{
+    width: 100%;
+    margin: 0%;
+    background-image: url("../imagenes/background-secc3.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-top: 2%;
+    div
+    {
+        text-align: center;
+    
+    }
+    h3{
+        text-align: center;
+        color: $negro;
+    }  
+    div
+    { 
+        p
+        {
+            color: $negro;
+            position: relative;
+            z-index: 1;
+        }
+    }
+    
+}
+
+.carousel
+{
+    .carousel-inner{
+        img
+        {
+            width: 100%;
+        }
+    }
+}
+
+.seccion--galeria
+{
+    p
+    {
+        color: $negro;
+    }
+    h3
+    {
+        color: $negro;
+    }
+    margin: 0;
+    width: 100%;
+    background-image: url("../imagenes/background-secc2.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    text-align:center
+}
+
+section
+{
+    @include sizes(90%, 90%);
+    margin-left: 5% ;
+    overflow: hidden;
+    p
+    {
+        font-family: 'Jost', sans-serif;
+        font-size: 150%;
+    }
+    img
+    {
+        width: 20%;
+        height: auto;
+        animation-duration: 2s;
+    }
+}
+
+.contenido
+{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-bottom: 3%
+}
+
+.textoseccion
+{
+    margin-top: 3%;
+    text-align: left;
+}
+
+.main-skins 
+{
+    img
+    {
+        @include sizes(100%,auto )
+    }
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1em;
+    padding: 2%;
+    background-color: $gridcolor;
+}
+
+.bienvenida__texto
+{
+    text-align: center;
+}
+
+.textogaleria
+{
+    margin: 0%;
+    padding-top: 3%;
+    margin-right: 2%;
+    p
+    {
+        text-align: justify;
+    }
+}
+
+.logo2__img
+{
+    margin: auto;
+    @include sizes(100%,auto )
+}
+
+.videodemo
+{
+    margin-right: 2%;
+    float: left;
+}
+
+.img-muestra
+{
+    width: 27%;
+}
+
+.tabla-descargas
+{   
+    margin-top: 2%;
+    margin-bottom: 2%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px $color-borde-tabladescargas;
+    font-family: 'Jost', sans-serif;
+    font-size: 130%;
+    background-color: $background-tabladescargas;
+    color: $color-texto-tabladescargas;
+}
+
+.botonseleccion
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.muestra
+{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+footer
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: $footercolor;
+    a
+    {
+        text-decoration: none;
+        padding-left: 2%;
+        padding-right: 2%;
+        color: $blancofooter;
+        font-family: 'Jost', sans-serif;
+    }
+    p
+    {
+        color: $gris;
+        font-family: 'Jost', sans-serif;
+        margin: 0.3%;
+    }
+}
