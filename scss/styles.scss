@@ -30,6 +30,17 @@ $time-2: 120s;
 $time-3: 180s;
 $time-4: 200s;
 
+.main-plugins
+{
+    background-color: $negro;
+}
+
+.banner {
+    background: $rosado;
+    background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+    background: linear-gradient(to right, #efe270, #8d7422, #000000);
+  }
+
 html 
 {
     height: 100%;
