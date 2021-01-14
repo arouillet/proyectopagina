@@ -799,14 +799,6 @@ section
     text-align: left;
 }
 
-.main-skins 
-{
-    img
-    {
-        @include sizes(100%,auto )
-    }
-}
-
 .contenedor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -910,11 +902,15 @@ footer
     background-image: url(../imagenes/background-skins.png);
     background-size: cover;
     background-attachment: fixed;
+    img
+    {
+        @include sizes(100%,auto )
+    }
 }
 
 .container.gallery-container {
     background-color: $background-container-galeria;
-    color: #35373a;
+    color: $grisazulado;
     min-height: 100vh;
     padding: 30px 50px;
 }
