@@ -175,8 +175,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 6%;
-  margin-top: 6%; }
+  margin-bottom: 6%; }
   .contenedor-descarga .card {
     background-color: rgba(221, 217, 209, 0.288);
     position: relative; }
@@ -362,6 +361,33 @@ html {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+
+.textodescarga {
+  padding-left: 10%;
+  padding-right: 10%;
+  color: rgba(173, 173, 173, 0.781); }
+  .textodescarga h3 {
+    color: white;
+    font-family: 'Work Sans', cursive;
+    font-size: 55px;
+    text-align: center; }
+  .textodescarga p {
+    font-size: 25px;
+    text-align: center; }
+
+.textodescarga2 {
+  padding-left: 10%;
+  padding-right: 10%;
+  color: rgba(173, 173, 173, 0.781);
+  padding-bottom: 6%; }
+  .textodescarga2 h3 {
+    color: white;
+    font-family: 'Work Sans', cursive;
+    font-size: 60px;
+    text-align: left; }
+  .textodescarga2 p {
+    font-size: 25px;
+    text-align: left; }
 
 body.descarga {
   width: 100%;
@@ -894,8 +920,15 @@ section {
   overflow: hidden; }
 
 .main--descarga {
+  padding-top: 2%;
   width: 100%;
   height: 100%; }
+  .main--descarga h2 {
+    color: white;
+    text-align: center; }
+
+.titulodescarga1 {
+  text-align: center; }
 
 .container-descargabienvenida {
   width: 100%;
