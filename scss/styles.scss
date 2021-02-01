@@ -374,6 +374,7 @@ body.descarga
   
 body.historia{
         height: 100%;
+        background-color: black;
 }
 
 body:not(.index)
@@ -1258,4 +1259,83 @@ section
 .logo-descarga{
     width: 90%;
     margin-left: 2.5%;
+}
+
+.primary-btn {
+    background: #8490ff;
+    line-height: 42px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    position: relative;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    position: relative;
+}
+
+.img-fluid {
+    width: 300px;
+}
+
+
+
+.p1-gradient-bg, .banner-left .primary-btn, .home-about-right .primary-btn, .facts-area, .thumb .overlay-bg, .price-area .single-price:hover, .brands-area, .about-banner, .sb_bar {
+    background: -moz-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+    background: -webkit-linear-gradient(
+0deg
+, #8490ff 0%, #62bdfc 100%);
+    background: -ms-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+}
+
+.container2
+{
+    margin-bottom: 6%;
+}
+
+.acortar
+{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.skins
+{
+    background-image: url(../imagenes/background-skins1.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.main-skins2{
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.625em;
+    position: relative;
+    @media(max-width: 767px)
+    {
+        .banner-left {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .banner-right {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+
 }
