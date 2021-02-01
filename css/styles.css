@@ -393,6 +393,13 @@ html {
     font-size: 25px;
     text-align: left; }
 
+.equipowinamp {
+  font-family: 'Work Sans', cursive;
+  color: #fbb400; }
+
+body.index {
+  background-color: black; }
+
 body.descarga {
   width: 100%;
   height: 100%; }
