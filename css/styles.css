@@ -367,7 +367,8 @@ html {
   padding-right: 10%;
   color: rgba(173, 173, 173, 0.781); }
   .textodescarga h3 {
-    color: white !important;
+    text-decoration: none;
+    color: white;
     font-family: 'Work Sans', cursive;
     font-size: 55px;
     text-align: center; }
