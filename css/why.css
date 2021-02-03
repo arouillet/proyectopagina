@@ -244,9 +244,13 @@ h6 {
   z-index: 1;
 }
 
+
+
 .portfolio-item .caption .caption-content {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: auto 2rem 2rem;
+  background-color: rgba(0, 0, 0, 0.623);
+  padding: 3%;
 }
 
 .portfolio-item .caption .caption-content h2 {
@@ -289,7 +293,7 @@ h6 {
     clip-path: inset(2rem);
   }
   .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+    background-color:rgba(255, 255, 255, 0.822);
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
