@@ -592,19 +592,57 @@ body:not(.index) .main {
 .boton-descarga a {
   text-decoration: none; }
 
-h4 {
-  text-align: left;
-  padding: 0%;
-  color: blue;
-  font-family: 'Work Sans', cursive;
-  font-size: 35px; }
-
 h5 {
   text-align: center;
   padding: 0%;
   color: #5562da;
   font-family: 'Work Sans', cursive;
   font-size: 20px; }
+
+.caja-whywinamp {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .caja-whywinamp .box {
+    width: 600px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    .caja-whywinamp .box .title {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 60%; }
+      .caja-whywinamp .box .title h1 {
+        font-family: 'Poppins';
+        color: #fff;
+        font-size: 32px;
+        display: flex;
+        align-items: baseline;
+        position: relative; }
+    .caja-whywinamp .box .role {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 90px;
+      margin-top: -10px; }
+      .caja-whywinamp .box .role p {
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 400;
+        font-family: 'Lato';
+        color: #ffffff;
+        font-size: 115px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-family: 'Work Sans', cursive; }
+
+.logo-descarga2 {
+  max-width: 300px; }
 
 .logo__img {
   width: 70%;
@@ -726,7 +764,9 @@ section {
     .textogaleria {
       height: 100%; }
       .textogaleria p {
-        font-size: 23px; } }
+        font-size: 23px; }
+      .textogaleria h3 {
+        font-size: 170%; } }
   .textogaleria p {
     text-align: justify; }
 
@@ -890,6 +930,10 @@ section {
     font-size: 1em;
     color: #e9dede;
     text-align: center; }
+    .contenidohistoria3 h3 a:link {
+      text-decoration: none; }
+    .contenidohistoria3 h3 a {
+      color: #ffb510; }
   .contenidohistoria3 h2 {
     text-align: center;
     padding: 0%;
@@ -1124,7 +1168,7 @@ section {
   cursor: pointer;
   position: relative; }
 
-.img-fluid {
+.fotoskin {
   width: 300px; }
 
 .p1-gradient-bg, .banner-left .primary-btn, .home-about-right .primary-btn, .facts-area, .thumb .overlay-bg, .price-area .single-price:hover, .brands-area, .about-banner, .sb_bar {
@@ -1227,7 +1271,7 @@ section {
 
 .separador1 {
   width: 100%;
-  height: 30px; }
+  height: 70px; }
 
 .contacto {
   width: 100%;
